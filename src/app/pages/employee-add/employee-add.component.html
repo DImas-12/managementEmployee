@@ -1,0 +1,147 @@
+<div style="height: 100vh" class="display">
+  <div class="container">
+    <h3 class="display">{{ tipeForm }} Employeed</h3>
+    <!-- <div class="display">
+      <mat-icon style="font-size: 50px; position: fixed"
+        >account_circle</mat-icon
+      >
+    </div> -->
+
+    <form
+      class="Form"
+      [formGroup]="LoginForm"
+      style="display: flex; flex-direction: row; justify-content: space-between"
+    >
+      <div style="display: flex; flex-direction: column">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="username"
+          />
+          <mat-error *ngIf="username.invalid">{{
+            getErrorMessage()
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="firstName"
+          />
+          <mat-error *ngIf="firstName.invalid">{{
+            getErrorMessage()
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="lastName"
+          />
+          <mat-error *ngIf="lastName.invalid">{{
+            getErrorMessage()
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="email" />
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            placeholder="Placeholder"
+            formControlName="description"
+          ></textarea>
+
+          <mat-error *ngIf="description.invalid">{{
+            getErrorMessage()
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <mat-form-field appearance="outline">
+          <mat-label>Basic Salary</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="Placeholder"
+            formControlName="basicSalary"
+          />
+          <span matTextPrefix>Rp.</span>
+          <mat-error *ngIf="basicSalary.invalid">{{
+            getErrorMessage()
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Status</mat-label>
+
+          <mat-select formControlName="status">
+            <mat-option value="married">married</mat-option>
+            <mat-option value="single">single</mat-option>
+            <mat-option value="divorced">divorced</mat-option>
+          </mat-select>
+          <mat-error *ngIf="status.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Group</mat-label>
+          <mat-select formControlName="group">
+            <mat-option value="1">first group</mat-option>
+            <mat-option value="2">second group</mat-option>
+            <mat-option value="3">third</mat-option>
+            <mat-option value="4">fourth</mat-option>
+            <mat-option value="5">fifth</mat-option>
+            <mat-option value="6">Sixth group</mat-option>
+            <mat-option value="7">Seventh group</mat-option>
+            <mat-option value="8">Eighth group</mat-option>
+            <mat-option value="9">Ninth group</mat-option>
+            <mat-option value="10">Tenth group</mat-option>
+          </mat-select>
+          <!-- <input matInput placeholder="Placeholder" formControlName="group" /> -->
+          <mat-error *ngIf="group.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Birth Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="birthDate"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="birthDate.invalid">{{
+            getErrorMessage()
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+    <div class="display" style="gap: 25%">
+      <button
+        mat-raised-button
+        class="button"
+        style="background-color: red; color: white"
+        (click)="Cancel()"
+      >
+        Cancel
+      </button>
+      <button
+        mat-raised-button
+        class="button"
+        color="primary"
+        (click)="Save()"
+        disabled="{{ buttonStatus }}"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</div>

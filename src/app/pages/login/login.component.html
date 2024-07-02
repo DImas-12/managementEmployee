@@ -1,0 +1,45 @@
+<div style="height: 100vh" class="display">
+  <div class="container">
+    <h3 class="display">Login</h3>
+    <div class="display">
+      <mat-icon class="icon">account_circle</mat-icon>
+    </div>
+
+    <form class="Form" [formGroup]="LoginForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="username" />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="username.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error *ngIf="username.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+    </form>
+    <div class="display">
+      <button
+        mat-raised-button
+        class="button"
+        (click)="Login()"
+        disabled="{{ buttonStatus }}"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+</div>

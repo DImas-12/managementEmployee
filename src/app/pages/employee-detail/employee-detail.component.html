@@ -1,0 +1,52 @@
+<div style="height: 100vh" class="display">
+  <div class="container">
+    <h3 class="display">Employee Detail</h3>
+    <div
+      style="display: flex; flex-direction: row; justify-content: space-between"
+    >
+      <div style="display: flex; flex-direction: column">
+        <div>
+          <label>username</label>
+          <p>{{ this.dataSelected.username }}</p>
+        </div>
+        <div>
+          <label>First Name</label>
+          <p>{{ this.dataSelected.firstName }}</p>
+        </div>
+        <div>
+          <label>Last Name</label>
+          <p>{{ this.dataSelected.lastName }}</p>
+        </div>
+        <div>
+          <label>Email</label>
+          <p>{{ this.dataSelected.email }}</p>
+        </div>
+        <div>
+          <label>Description</label>
+          <p>{{ this.dataSelected.birthDate }}</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <div>
+          <label>Basic Salary</label>
+          <p>Rp.{{ this.dataSelected.basicSalary }}</p>
+        </div>
+        <div>
+          <label>Status</label>
+          <p>{{ this.dataSelected.status }}</p>
+        </div>
+        <div>
+          <label>Group</label>
+          <p>{{ this.dataSelected.group }}</p>
+        </div>
+        <div>
+          <label>Description</label>
+          <p>{{ this.dataSelected.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="display">
+      <button mat-raised-button class="button" (click)="BackPage()">OK</button>
+    </div>
+  </div>
+</div>

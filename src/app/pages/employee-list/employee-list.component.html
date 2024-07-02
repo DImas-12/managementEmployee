@@ -1,0 +1,12 @@
+<div
+  style="height: 100vh; display: flex; justify-content: center; padding: 20px"
+>
+  <div style="width: 100%">
+    <h3 style="display: flex; justify-content: center">employee list</h3>
+
+    <button mat-raised-button class="button" color="primary" (click)="Add()">
+      Add Data
+    </button>
+    <app-table (onDetail)="onDetail($event)"></app-table>
+  </div>
+</div>

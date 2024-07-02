@@ -1,6 +1,25 @@
 # EmployeeManagement
 
+Project ini adalah web untuk management data employee
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+
+## penggunaan web
+
+- login dengan menggunakan akun
+- di halaman web ini anda bisa menambah, menghapus, merubah data employee
+
+## Screenshots
+
+![App Screenshot](./src/assets/images/Halaman%20Login.png)
+
+![App Screenshot](./src/assets/images/Halaman%20List%20Employee.png)
+
+![App Screenshot](./src/assets/images/Halaman%20Detail%20Employee.png)
+
+![App Screenshot](./src/assets/images/Halaman%20Add%20Employee.png)
+
+![App Screenshot](./src/assets/images/Halaman%20Edit%20Employee.png)
 
 ## Development server
 
